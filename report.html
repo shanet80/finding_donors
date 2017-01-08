@@ -11790,7 +11790,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries necessary for this project</span>
@@ -11892,7 +11892,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Total number of records</span>
@@ -11960,7 +11960,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Split the data into features and target label</span>
@@ -12480,7 +12480,7 @@ AADMjf8PyrBpxBdOEi4AAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Log-transform the skewed features</span>
@@ -13000,7 +13000,7 @@ IQAAAEBvaIQAAAAAvfH/AZmq9gUw2kgfAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import sklearn.preprocessing.StandardScaler</span>
@@ -13131,7 +13131,7 @@ IQAAAEBvaIQAAAAAvfH/AZmq9gUw2kgfAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># One-hot encode the &#39;features_raw&#39; data using pandas.get_dummies()</span>
@@ -13181,7 +13181,7 @@ IQAAAEBvaIQAAAAAvfH/AZmq9gUw2kgfAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import train_test_split</span>
@@ -13251,23 +13251,18 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Calculate accuracy</span>
-<span class="n">potential_donors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">income</span><span class="p">)))</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">potential_donors</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">greater_percent</span><span class="o">/</span><span class="mi">100</span>
 
 <span class="c"># Calculate F-score using the formula above for beta = 0.5</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
 
-<span class="n">pre</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">potential_donors</span><span class="p">)</span>
-<span class="n">rec</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">potential_donors</span><span class="p">)</span>
+<span class="n">pre</span> <span class="o">=</span> <span class="n">accuracy</span>
+<span class="n">rec</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span>
 
 <span class="n">fscore</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">beta</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">pre</span> <span class="o">*</span> <span class="n">rec</span><span class="p">)</span><span class="o">/</span><span class="p">(((</span><span class="n">beta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">pre</span><span class="p">)</span> <span class="o">+</span> <span class="n">rec</span><span class="p">)</span>
@@ -13528,7 +13523,7 @@ In the code block below, you will need to implement the following:</p>
 
 <span class="c"># Initialize the three models</span>
 <span class="n">clf_A</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">clf_C</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c"># Calculate the number of samples for 1%, 10%, and 100% of the training data</span>
@@ -14754,7 +14749,7 @@ uoaFEEmSJEmS1DUshEiSJEmSpK5hIUSSJEmSJHWN/w+1eKj3uipj8AAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The AdaBoost classifer had by far the longest training and model prediction times. However, it performed better in both accuracy and F-score on the testing set. Since this task will likely be a batch process performed once training and prediction time are not crucial. However, accuracy and making sure we do not have false positives are citical. Therefore, the algorithm which shows the best performance in testing data would be the best choice since it is generalizing the best to unseen data.</p>
+<p><strong>Answer: </strong> The AdaBoost classifer had longer training and model prediction times than the Decision Tree classifer, but much lower than the Support Vector classifier. Adaboost classifier performed better in both accuracy and F-score on the testing set. Since this task will likely be a batch process performed once training and prediction time are not crucial. However, accuracy and making sure we do not have false positives are citical. Therefore, the algorithm which shows the best performance in testing data would be the best choice since it is generalizing the best to unseen data.</p>
 
 </div>
 </div>
@@ -14774,7 +14769,8 @@ uoaFEEmSJEmS1DUshEiSJEmSpK5hIUSSJEmSJHWN/w+1eKj3uipj8AAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Adaboost uses weaker learning algorithms and weighs their inputs together. Weaker learners for instance might be overly simplified generalization as to whether someone makes above 50k yearly, such as everyone with a Bachelor's degree or higher makes over 50k. Each of the generalizations will be correct some percentage of the time. By combining the weaker learners and essentially having them vote on whether a household will have an income above 50k and then weighting their vote by how often they are correct we can combine them to make a prediction that is better then the sum of its parts.</p>
+<p><strong>Answer: </strong> Adaboost uses weaker learning algorithms and weighs their inputs together. The weaker learners in this case are Decision Trees. These can be thought of as a game of 20 questions. The algorithms will look at a particular datapoint and ask a question such as "Is this persons age above 30?". It will then ask further questions based on the answer and make a prediction.</p>
+<p>By combining the weaker learners and essentially having them vote on whether a household will have an income above 50k and then weighting their vote by how often they are correct we can combine them to make a prediction that is better then the sum of its parts.</p>
 
 </div>
 </div>
